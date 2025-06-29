@@ -1,3 +1,19 @@
+const rankToClassMap = {
+    'S+': 'S-plus',
+    'S': 'S',
+    'S-': 'S-minus',
+    'A+': 'A-plus',
+    'A': 'A',
+    'A-': 'A-minus',
+    'B+': 'B-plus',
+    'B': 'B',
+    'B-': 'B-minus',
+    'C+': 'C-plus',
+    'C': 'C',
+    'C-': 'C-minus',
+    'F': 'F'
+};
+
 // Load players from localStorage on page load
 let playersData = JSON.parse(localStorage.getItem('playersData')) || [];
 
@@ -9,7 +25,7 @@ const sliders = [
     { slider: 'clutchSlider', value: 'clutchValue' }
 ];
 
-// function to save data to localStorage
+// Function to save data to localStorage
 function saveToLocalStorage() {
     localStorage.setItem('playersData', JSON.stringify(playersData));
 }
@@ -34,17 +50,10 @@ function updateTotalScore() {
     const total = tech + combat + game + adapt + clutch;
     const rank = calculateRank(total);
     
-    let rankClass = rank;
-    if (rank.includes('+')) {
-        rankClass = rank.replace('+', '-plus');
-    } else if (rank.includes('-')) {
-        rankClass = rank.replace('-', '-minus');
-    }
-    
     document.getElementById('totalScore').textContent = `${total}/50`;
     const rankEl = document.getElementById('currentRank');
     rankEl.textContent = rank;
-    rankEl.className = `rank-display rank-${rankClass}`;
+    rankEl.className = `rank-display rank-${rankToClassMap[rank]}`;
 }
 
 function calculateRank(score) {
@@ -64,18 +73,15 @@ function calculateRank(score) {
 }
 
 function addPlayer(username, rank, score = null) {
-    // check if player is already added there
     const existingIndex = playersData.findIndex(p => p.username.toLowerCase() === username.toLowerCase());
     
     if (existingIndex !== -1) {
-        // update a player
         playersData[existingIndex] = { username, rank, score };
     } else {
-        // add new player
         playersData.push({ username, rank, score });
     }
     
-    saveToLocalStorage(); // Save to localStorage
+    saveToLocalStorage();
     updateLeaderboard();
 }
 
@@ -87,14 +93,13 @@ function updateLeaderboard() {
         return;
     }
 
-    // sort the players
     const rankOrder = ['S+', 'S', 'S-', 'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'F'];
     playersData.sort((a, b) => rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank));
 
     leaderboard.innerHTML = playersData.map((player, index) => `
         <div class="player-item" id="player-${index}">
             <span class="player-name">${player.username}</span>
-            <span class="player-rank rank-${player.rank.replace('+', '-plus').replace('-', '-minus')}">${player.rank}</span>
+            <span class="player-rank rank-${rankToClassMap[player.rank]}">${player.rank}</span>
             <div class="player-actions">
                 <button class="action-btn edit" onclick="editPlayer(${index})">Edit</button>
                 <button class="action-btn delete" onclick="deletePlayer(${index})">Delete</button>
@@ -130,7 +135,7 @@ function editPlayer(index) {
 function saveEdit(index) {
     const newRank = document.getElementById(`edit-rank-${index}`).value;
     playersData[index].rank = newRank;
-    saveToLocalStorage(); // Save to localStorage
+    saveToLocalStorage();
     updateLeaderboard();
 }
 
@@ -142,7 +147,7 @@ function deletePlayer(index) {
     const player = playersData[index];
     if (confirm(`Are you sure you want to delete ${player.username} from the rankings?`)) {
         playersData.splice(index, 1);
-        saveToLocalStorage(); // Save to localStorage
+        saveToLocalStorage();
         updateLeaderboard();
     }
 }
@@ -164,7 +169,7 @@ function addManualPlayer() {
 function clearAllPlayers() {
     if (confirm('Are you sure you want to clear all rankings? This action cannot be undone.')) {
         playersData = [];
-        saveToLocalStorage(); // Save to localStorage
+        saveToLocalStorage();
         updateLeaderboard();
     }
 }
@@ -199,4 +204,4 @@ document.getElementById('playerForm').addEventListener('submit', function(e) {
 });
 
 updateTotalScore();
-updateLeaderboard(); // Load saved data on page load
+updateLeaderboard();
