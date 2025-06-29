@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="SS Player Ranking System">
     <meta property="og:site_name" content="Player Ranking System">
-    <meta property="og:description" content="Rank players based on Tech Knowledge, Combat Skill, Game Sense, Adaptability, and Clutch Factor.">
-    <meta property="og:image" content="https://ibb.co/yn1f1hNg">
+    <meta property="og:description" content="Rank SS members based on Tech Knowledge, Combat Skill, Game Sense, Adaptability, and Clutch Factor. This was made for Rank Overseers.">
+    <meta property="og:image" content="https://imgur.com/a/xPtbwkR">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Player Ranking System Thumbnail">
@@ -29,47 +29,47 @@
                 <form id="playerForm">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Enter player username" required>
+                        <input type="text" id="username" placeholder="Enter username">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Tech Knowledge</span>
-                            <span class="slider-value no-background" id="techValue">5</span>
+                            <span>Tech Knowledge <span class="tooltip-icon" data-tooltip="Rate based on how many techs a person knows for a character/characters">?</span></span>
+                            <span class="slider-value" id="techValue">5</span>
                         </div>
-                        <input type="range" id="techSlider" class="slider" min="1" max="10" value="5">
+                        <input type="range" min="0" max="10" value="5" id="techSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Combat Skill</span>
-                            <span class="slider-value no-background" id="combatValue">5</span>
+                            <span>Combat Skill <span class="tooltip-icon" data-tooltip="Rate overall combat skill such as do they have a good playstyle and a strong one">?</span></span>
+                            <span class="slider-value" id="combatValue">5</span>
                         </div>
-                        <input type="range" id="combatSlider" class="slider" min="1" max="10" value="5">
+                        <input type="range" min="0" max="10" value="5" id="combatSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Game Sense</span>
-                            <span class="slider-value no-background" id="gameValue">5</span>
+                            <span>Game Sense <span class="tooltip-icon" data-tooltip="Rate player amount of gamesense how much do they know about the game and how to play it">?</span></span>
+                            <span class="slider-value" id="gameValue">5</span>
                         </div>
-                        <input type="range" id="gameSlider" class="slider" min="1" max="10" value="5">
+                        <input type="range" min="0" max="10" value="5" id="gameSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Adaptability</span>
-                            <span class="slider-value no-background" id="adaptValue">5</span>
+                            <span>Adaptability <span class="tooltip-icon" data-tooltip="Rate how good they can adapt to different playstyles or in different situations">?</span></span>
+                            <span class="slider-value" id="adaptValue">5</span>
                         </div>
-                        <input type="range" id="adaptSlider" class="slider" min="1" max="10" value="5">
+                        <input type="range" min="0" max="10" value="5" id="adaptSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Clutch Factor</span>
-                            <span class="slider-value no-background" id="clutchValue">5</span>
+                            <span>Clutch Factor <span class="tooltip-icon" data-tooltip="Rate how good a player is able to perform at low health or in difficult situations">?</span></span>
+                            <span class="slider-value" id="clutchValue">5</span>
                         </div>
-                        <input type="range" id="clutchSlider" class="slider" min="1" max="10" value="5">
+                        <input type="range" min="0" max="10" value="5" id="clutchSlider">
                     </div>
 
                     <div class="total-score">
@@ -82,7 +82,7 @@
                 </form>
 
                 <div class="manual-rank-section">
-                    <h3 style="color: #ccc; margin-bottom: 20px;">Quick Add Player</h3>
+                    <h2>Quick Add Player</h2>
                     <div class="form-group">
                         <label for="manualUsername">Username</label>
                         <input type="text" id="manualUsername" placeholder="Enter username">
@@ -105,7 +105,7 @@
                             <option value="F">F (0-11)</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-secondary" onclick="addManualPlayer()">Add Player</button>
+                    <button class="btn btn-secondary" onclick="addManualPlayer()">Add Player</button>
                 </div>
             </div>
 
@@ -114,7 +114,7 @@
                 <div id="leaderboard">
                     <div class="empty-state">No players ranked yet. Start by rating a player!</div>
                 </div>
-                <button type="button" class="btn clear-btn" onclick="clearAllPlayers()">Clear All Rankings</button>
+                <button class="btn clear-btn" onclick="clearAllPlayers()">Clear All Rankings</button>
             </div>
         </div>
 
