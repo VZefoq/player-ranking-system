@@ -197,8 +197,8 @@ document.getElementById('playerForm').addEventListener('submit', function(e) {
     // reset form
     document.getElementById('username').value = '';
     sliders.forEach(({ slider, value }) => {
-        document.getElementById(slider).value = 5;
-        document.getElementById(value).textContent = '5';
+        document.getElementById(slider).value = 1;
+        document.getElementById(value).textContent = '1';
     });
     updateTotalScore();
 });
