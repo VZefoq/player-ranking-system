@@ -68,6 +68,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-bottom: 40px;
+            align-items: start;
         }
 
         @media (max-width: 768px) {
@@ -223,13 +224,13 @@
         }
 
         .btn {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: #000;
-            border: none;
+            background: rgba(78, 205, 196, 0.2);
+            color: #4ecdc4;
+            border: 2px solid #4ecdc4;
             padding: 15px 30px;
             border-radius: 10px;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
@@ -237,8 +238,9 @@
         }
 
         .btn:hover {
+            background: rgba(78, 205, 196, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(78, 205, 196, 0.2);
         }
 
         .btn:active {
@@ -253,16 +255,23 @@
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
         }
 
         .clear-btn {
-            background: linear-gradient(45deg, #ff6b6b, #ff8080);
-            color: #fff;
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            border: 2px solid #ff6b6b;
+        }
+
+        .clear-btn:hover {
+            background: rgba(255, 107, 107, 0.3);
+            box-shadow: 0 8px 16px rgba(255, 107, 107, 0.2);
         }
 
         .player-item {
             display: grid;
-            grid-template-columns: 1fr auto auto;
+            grid-template-columns: 1fr auto auto auto;
             gap: 15px;
             align-items: center;
             background: rgba(20, 20, 20, 0.6);
@@ -276,6 +285,23 @@
         .player-item:hover {
             background: rgba(40, 40, 40, 0.8);
             transform: translateX(5px);
+        }
+
+        .player-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .player-name {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .player-timestamp {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
         }
 
         .player-actions {
@@ -328,11 +354,6 @@
 
         .edit-select option {
             background: #1a1a1a;
-            color: #fff;
-        }
-
-        .player-name {
-            font-weight: 600;
             color: #fff;
         }
 
@@ -499,5 +520,15 @@
                 visibility: visible;
                 opacity: 1;
                 transform: translateX(-50%) translateY(-5px);
+            }
+
+            .player-item {
+                grid-template-columns: 1fr auto;
+                gap: 10px;
+            }
+
+            .player-actions {
+                grid-column: span 2;
+                justify-self: center;
             }
         }
