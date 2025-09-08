@@ -28,77 +28,77 @@
                 <form id="playerForm">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Enter player username" required>
+                        <input type="text" id="username" placeholder="Enter player username">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <div class="category-with-tooltip">
-                                <span>Tech Knowledge</span>
-                                <div class="tooltip-container">
+                            <span class="category-with-tooltip">
+                                Tech Knowledge
+                                <span class="tooltip-container">
                                     <span class="tooltip-icon">?</span>
-                                    <div class="tooltip">Rate based on how much techs a person knows for a character/characters</div>
-                                </div>
-                            </div>
-                            <span class="slider-value no-background" id="techValue">1</span>
+                                    <span class="tooltip">Rate based on how much techs a person knows for a character/characters</span>
+                                </span>
+                            </span>
+                            <span class="slider-value" id="techValue">1</span>
                         </div>
-                        <input type="range" id="techSlider" class="slider" min="1" max="10" value="1">
+                        <input type="range" min="1" max="10" value="1" class="slider" id="techSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <div class="category-with-tooltip">
-                                <span>Combat Skill</span>
-                                <div class="tooltip-container">
+                            <span class="category-with-tooltip">
+                                Combat Skill
+                                <span class="tooltip-container">
                                     <span class="tooltip-icon">?</span>
-                                    <div class="tooltip">Rate overall combat skill such as do they have a good playstyle and a strong one</div>
-                                </div>
-                            </div>
-                            <span class="slider-value no-background" id="combatValue">1</span>
+                                    <span class="tooltip">Rate overall combat skill such as do they have a good playstyle and a strong one</span>
+                                </span>
+                            </span>
+                            <span class="slider-value" id="combatValue">1</span>
                         </div>
-                        <input type="range" id="combatSlider" class="slider" min="1" max="10" value="1">
+                        <input type="range" min="1" max="10" value="1" class="slider" id="combatSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <div class="category-with-tooltip">
-                                <span>Game Sense</span>
-                                <div class="tooltip-container">
+                            <span class="category-with-tooltip">
+                                Game Sense
+                                <span class="tooltip-container">
                                     <span class="tooltip-icon">?</span>
-                                    <div class="tooltip">Rate player amount of gamesense how much do they know about the game and how to play it</div>
-                                </div>
-                            </div>
-                            <span class="slider-value no-background" id="gameValue">1</span>
+                                    <span class="tooltip">Rate player amount of gamesense how much do they know about the game and how to play it</span>
+                                </span>
+                            </span>
+                            <span class="slider-value" id="gameValue">1</span>
                         </div>
-                        <input type="range" id="gameSlider" class="slider" min="1" max="10" value="1">
+                        <input type="range" min="1" max="10" value="1" class="slider" id="gameSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <div class="category-with-tooltip">
-                                <span>Adaptability</span>
-                                <div class="tooltip-container">
+                            <span class="category-with-tooltip">
+                                Adaptability
+                                <span class="tooltip-container">
                                     <span class="tooltip-icon">?</span>
-                                    <div class="tooltip">Rate how good they can adapt to different playstyles or in different situations</div>
-                                </div>
-                            </div>
-                            <span class="slider-value no-background" id="adaptValue">1</span>
+                                    <span class="tooltip">Rate how good they can adapt to different playstyles or in different situations</span>
+                                </span>
+                            </span>
+                            <span class="slider-value" id="adaptValue">1</span>
                         </div>
-                        <input type="range" id="adaptSlider" class="slider" min="1" max="10" value="1">
+                        <input type="range" min="1" max="10" value="1" class="slider" id="adaptSlider">
                     </div>
 
                     <div class="slider-group">
                         <div class="slider-label">
-                            <div class="category-with-tooltip">
-                                <span>Clutch Factor</span>
-                                <div class="tooltip-container">
+                            <span class="category-with-tooltip">
+                                Clutch Factor
+                                <span class="tooltip-container">
                                     <span class="tooltip-icon">?</span>
-                                    <div class="tooltip">Rate how good a player is able to perform at low health or in difficult situations</div>
-                                </div>
-                            </div>
-                            <span class="slider-value no-background" id="clutchValue">1</span>
+                                    <span class="tooltip">Rate how good a player is able to perform at low health or in difficult situations</span>
+                                </span>
+                            </span>
+                            <span class="slider-value" id="clutchValue">1</span>
                         </div>
-                        <input type="range" id="clutchSlider" class="slider" min="1" max="10" value="1">
+                        <input type="range" min="1" max="10" value="1" class="slider" id="clutchSlider">
                     </div>
 
                     <div class="total-score">
@@ -111,10 +111,10 @@
                 </form>
 
                 <div class="manual-rank-section">
-                    <h3 style="color: #ccc; margin-bottom: 20px;">Quick Add Player</h3>
+                    <h2>Quick Add Player</h2>
                     <div class="form-group">
                         <label for="manualUsername">Username</label>
-                        <input type="text" id="manualUsername" placeholder="Enter username">
+                        <input type="text" id="manualUsername" placeholder="Enter player username">
                     </div>
                     <div class="form-group">
                         <label for="manualRank">Rank</label>
@@ -125,8 +125,8 @@
                             <option value="A+">A+ (36-38)</option>
                             <option value="A">A (33-35)</option>
                             <option value="A-">A- (30-32)</option>
-                            <option value="B+">B+ (27-29)</option>
-                            <option value="B" selected>B (24-26)</option>
+                            <option value="B+" selected>B+ (27-29)</option>
+                            <option value="B">B (24-26)</option>
                             <option value="B-">B- (21-23)</option>
                             <option value="C+">C+ (18-20)</option>
                             <option value="C">C (15-17)</option>
@@ -134,7 +134,7 @@
                             <option value="F">F (0-11)</option>
                         </select>
                     </div>
-                    <button type="button" class="btn btn-secondary" onclick="addManualPlayer()">Add Player</button>
+                    <button class="btn btn-secondary" onclick="addManualPlayer()">Add Player</button>
                 </div>
             </div>
 
@@ -143,7 +143,10 @@
                 <div id="leaderboard">
                     <div class="empty-state">No players ranked yet. Start by rating a player!</div>
                 </div>
-                <button type="button" class="btn clear-btn" onclick="clearAllPlayers()">Clear All Rankings</button>
+                <button class="btn clear-btn" onclick="clearAllPlayers()">Clear All Rankings</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">Import Rankings</button>
+                <input type="file" id="importFile" style="display: none;" accept=".json" onchange="importPlayers(event)">
+                <button class="btn btn-secondary" onclick="exportPlayers()">Export Rankings</button>
             </div>
         </div>
 
