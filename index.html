@@ -40,7 +40,7 @@
                                     <span class="tooltip">Rate based on how much techs a person knows for a character/characters</span>
                                 </span>
                             </span>
-                            <span class="slider-value" id="techValue">1</span>
+                            <span class="slider-value no-background" id="techValue">1</span>
                         </div>
                         <input type="range" min="1" max="10" value="1" class="slider" id="techSlider">
                     </div>
@@ -54,7 +54,7 @@
                                     <span class="tooltip">Rate overall combat skill such as do they have a good playstyle and a strong one</span>
                                 </span>
                             </span>
-                            <span class="slider-value" id="combatValue">1</span>
+                            <span class="slider-value no-background" id="combatValue">1</span>
                         </div>
                         <input type="range" min="1" max="10" value="1" class="slider" id="combatSlider">
                     </div>
@@ -68,7 +68,7 @@
                                     <span class="tooltip">Rate player amount of gamesense how much do they know about the game and how to play it</span>
                                 </span>
                             </span>
-                            <span class="slider-value" id="gameValue">1</span>
+                            <span class="slider-value no-background" id="gameValue">1</span>
                         </div>
                         <input type="range" min="1" max="10" value="1" class="slider" id="gameSlider">
                     </div>
@@ -82,7 +82,7 @@
                                     <span class="tooltip">Rate how good they can adapt to different playstyles or in different situations</span>
                                 </span>
                             </span>
-                            <span class="slider-value" id="adaptValue">1</span>
+                            <span class="slider-value no-background" id="adaptValue">1</span>
                         </div>
                         <input type="range" min="1" max="10" value="1" class="slider" id="adaptSlider">
                     </div>
@@ -96,7 +96,7 @@
                                     <span class="tooltip">Rate how good a player is able to perform at low health or in difficult situations</span>
                                 </span>
                             </span>
-                            <span class="slider-value" id="clutchValue">1</span>
+                            <span class="slider-value no-background" id="clutchValue">1</span>
                         </div>
                         <input type="range" min="1" max="10" value="1" class="slider" id="clutchSlider">
                     </div>
@@ -143,10 +143,10 @@
                 <div id="leaderboard">
                     <div class="empty-state">No players ranked yet. Start by rating a player!</div>
                 </div>
-                <button class="btn clear-btn" onclick="clearAllPlayers()">Clear All Rankings</button>
                 <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">Import Rankings</button>
                 <input type="file" id="importFile" style="display: none;" accept=".json" onchange="importPlayers(event)">
                 <button class="btn btn-secondary" onclick="exportPlayers()">Export Rankings</button>
+                <button class="btn clear-btn" onclick="clearAllPlayers()">Clear All Rankings</button>
             </div>
         </div>
 

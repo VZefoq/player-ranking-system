@@ -174,7 +174,7 @@ body::before {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background: rgba(78, 205, 196, 0.2);
     border: 2px solid #4ecdc4;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -189,7 +189,7 @@ body::before {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background: rgba(78, 205, 196, 0.2);
     border: 2px solid #4ecdc4;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -436,6 +436,7 @@ body::before {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
 .category-with-tooltip {
     display: flex;
     align-items: center;
@@ -507,6 +508,7 @@ body::before {
     opacity: 1;
     transform: translateX(-50%) translateY(-5px);
 }
+
 
 @media (max-width: 768px) {
     .tooltip {
